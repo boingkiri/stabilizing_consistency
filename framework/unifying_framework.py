@@ -121,7 +121,9 @@ class UnifyingFramework():
                 self.wandblog.update_log(log)
                 self.wandblog.flush(step=self.step)
 
-            if self.step % self.config["saving_step"] == 0 and self.step not in fid_dict:
+            if self.step % self.config["saving_step"] == 0 and \
+                self.step not in fid_dict and \
+                not first_step:
                 model_state = self.framework.get_model_state()
                 sampling_modes = ['one-step', 'edm']
                 # sampling_modes = ['one-step', 'two-step', 'edm']
