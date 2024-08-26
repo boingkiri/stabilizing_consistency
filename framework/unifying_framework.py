@@ -88,8 +88,8 @@ class UnifyingFramework():
         in_process_dir = os.path.join(in_process_dir, in_process_model_dir_name)
         num_of_rounds = self.config["framework"]["diffusion"]['train']["total_batch_size"] // \
                             self.config["framework"]["diffusion"]['train']["batch_size_per_rounds"]
-        # first_step = True
-        first_step = False
+        first_step = True
+        # first_step = False
         fid_dict = {}
         log = {}
 
