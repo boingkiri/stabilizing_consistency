@@ -123,8 +123,9 @@ class UnifyingFramework():
 
             if self.step % self.config["saving_step"] == 0 and self.step not in fid_dict:
                 model_state = self.framework.get_model_state()
+                sampling_modes = ['one-step', 'edm']
                 # sampling_modes = ['one-step', 'two-step', 'edm']
-                sampling_modes = ['one-step', 'two-step']
+                # sampling_modes = ['one-step', 'two-step']
                 
                 if self.do_fid_during_training and not (self.current_model_type == "ldm" and self.train_idx == 1):
                     mode_metrics = {}
